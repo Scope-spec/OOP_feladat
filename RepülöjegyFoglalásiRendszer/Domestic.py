@@ -5,5 +5,5 @@ class Domestic(Route):
         super().__init__(id, destination, ticket_price)
 
     def info(self):
-        return f"Route number: {self.get_id}, Destination: {self.get_destination}, Ticket price: {self.get_ticket_price}"
+        return f"Route number: {self.get_id}, Destination: {self.get_destination}, Ticket price: {self.get_ticket_price} huf"
 
