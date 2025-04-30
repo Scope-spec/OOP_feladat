@@ -33,18 +33,20 @@ def felhasznaloi_felulet(rendszer):
         valasztas = input("Válassz egy műveletet: ")
 
         if valasztas == "1":
-            user = input("Adja meg a nevét: ")
+            name = input("Adja meg a nevét: ")
             jaratszam = input("Adja meg a járatszámot: ")
-            eredmeny = rendszer.foglal(user, jaratszam)
+            eredmeny = rendszer.foglal(name, jaratszam)
             print(eredmeny)
 
         elif valasztas == "2":
-            user = input("Adja meg a nevét: ")
+            name = input("Adja meg a nevét: ")
             jaratszam = input("Adja meg a járatszámot: ")
-            eredmeny = rendszer.lemond(user, jaratszam)
+            eredmeny = rendszer.lemond(name, jaratszam)
             print(eredmeny)
 
         elif valasztas == "3":
+            print()
+            print("Foglalások:")
             rendszer.foglalasok_listazasa()
 
         elif valasztas == "4":
