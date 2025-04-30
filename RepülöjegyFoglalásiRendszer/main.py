@@ -1,24 +1,27 @@
 from Belfoldi import Belfoldi
 from Nemzetkozi import Nemzetkozi
 from Legitarsasag import Legitarsasag
+from Jegyfoglalas import Jegyfoglalas
 
 j1 = Belfoldi("N101", "Budapest", 1200)
 j2 = Belfoldi("B02", "Debrecen", 1000)
 j3 = Nemzetkozi("Z11", "London", 20000)
 j4 = Nemzetkozi("Z12", "Lisbon", 15000)
+j5 = Belfoldi("N201", "Pécs", 1400)
 
 lt = Legitarsasag("Testair")
 lt.append_jaratok(j1)
 lt.append_jaratok(j2)
 lt.append_jaratok(j3)
 lt.append_jaratok(j4)
+lt.append_jaratok(j5)
 
-#print(f"---- {lt.get_nev()} ----")
+rendszer = Jegyfoglalas(lt)
+rendszer.foglal("Kis Béla", "N101")
+rendszer.foglal("Nagy Péter", "N201")
+rendszer.foglal("Kiss Márta", "Z12")
 
-
-
-
-def felhasznaloi_felulet():
+def felhasznaloi_felulet(rendszer):
     while True:
         print(f"\n--- {lt.get_nev()} Repülőjegy Foglalási Rendszer ---")
         print("1. Jegy foglalása")
@@ -28,14 +31,23 @@ def felhasznaloi_felulet():
         print("0. Kilépés")
 
         valasztas = input("Válassz egy műveletet: ")
-        """""
+
         if valasztas == "1":
+            user = input("Adja meg a nevét: ")
+            jaratszam = input("Adja meg a járatszámot: ")
+            eredmeny = rendszer.foglal(user, jaratszam)
+            print(eredmeny)
 
         elif valasztas == "2":
+            user = input("Adja meg a nevét: ")
+            jaratszam = input("Adja meg a járatszámot: ")
+            eredmeny = rendszer.lemond(user, jaratszam)
+            print(eredmeny)
 
         elif valasztas == "3":
-        """
-        if valasztas == "4":
+            rendszer.foglalasok_listazasa()
+
+        elif valasztas == "4":
             print()
             print("Elérhető járatok:")
             print(lt.info())
@@ -44,4 +56,4 @@ def felhasznaloi_felulet():
             print("Kilépés a rendszerből.")
             break
 
-felhasznaloi_felulet()
+felhasznaloi_felulet(rendszer)
