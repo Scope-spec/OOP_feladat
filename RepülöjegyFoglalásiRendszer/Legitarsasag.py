@@ -1,17 +1,17 @@
 class Legitarsasag:
     def __init__(self, nev):
-        self._nev = nev
-        self._jaratok = []
+        self.nev = nev
+        self.jaratok = []
 
     def get_nev(self):
-        return self._nev
+        return self.nev
 
     def append_jaratok(self, jarat):
-        self._jaratok.append(jarat)
+        self.jaratok.append(jarat)
 
     def info(self):
         jaratok_info = []
-        for jarat in self._jaratok:
+        for jarat in self.jaratok:
             jaratok_info.append(jarat.info())
         return '\n'.join(jaratok_info)
 
