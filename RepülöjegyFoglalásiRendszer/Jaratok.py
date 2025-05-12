@@ -5,11 +5,15 @@ class Jaratok(ABC):
         self._jaratszam = jaratszam
         self._celallomas = celallomas
         self._jegyar = jegyar
-
+    @property
     def get_jaratszam(self):
         return self._jaratszam
+
+    @property
     def get_celallomas(self):
         return self._celallomas
+
+    @property
     def get_jegyar(self):
         return self._jegyar
 
